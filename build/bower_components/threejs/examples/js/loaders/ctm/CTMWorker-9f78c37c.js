@@ -1,0 +1,1 @@
+importScripts("lzma-d827026e.js","ctm-7663b4ee.js"),self.onmessage=function(e){for(var s=[],a=0;a<e.data.offsets.length;a++){var t=new CTM.Stream(e.data.data);t.offset=e.data.offsets[a],s[a]=new CTM.File(t)}self.postMessage(s),self.close()};
