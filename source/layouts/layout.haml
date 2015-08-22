@@ -3,13 +3,35 @@
   %head
     %meta{charset: "utf-8"}/
     %meta{content: "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600", :rel => "stylesheet", :type => "text/css"}/
 
     %title
-      = current_page.data.title || "Page Title"
+      = current_page.data.title || "Tom Judd"
 
     = yield_content(:javascripts)
     = yield_content(:stylesheets)
-
+	
   %body{class: page_classes, :onload => "init(); animate();"}
+    %div{:id => "title"}
+      %h1{:class => "noselect"}Tom Judd
+
+    %div{:id => "stap"}
+      %h2{:class => "noselect"}
+        Animator, creative coder and
+      %h2{:class => "noselect"}
+        co-founder of
+        %a{:href => "http://animade.tv"}Animade.
+
+      %a{:href => "https://twitter.com/tomjudd1"}
+        %img{:class => "noselect icon", :alt => "tom on twiiter", :src => "library/SVG/03-twitter.svg"}
+      %a{:href => "https://instagram.com/tomjudd1"}         
+        %img{:class => "noselect icon", :alt => "tom on twiiter", :src => "library/SVG/38-instagram.svg"}
+      %a{:href => "https://twitter.com/tomjudd1"}
+        %img{:class => "noselect icon", :alt => "tom on twiiter", :src => "library/SVG/53-vimeo.svg"}
+      %a{:href => "https://twitter.com/tomjudd1"}  
+        %img{:class => "noselect icon", :alt => "tom on twiiter", :src => "library/SVG/11-linkedin.svg"}            
+      %a{:href => "https://twitter.com/tomjudd1"}
+        %img{:class => "noselect icon", :alt => "tom on twiiter", :src => "library/SVG/02-dribbble.svg"}        
+    %canvas{:id => "drawing"}
 
     = yield

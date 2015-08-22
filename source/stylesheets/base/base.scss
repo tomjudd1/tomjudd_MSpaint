@@ -10,10 +10,105 @@
 // Installed as a gem for lots of annoying reasons
 @import "bourbon";
 
+$keyColour1: #000000;
+
+
+$leftPadding: 50px;
+$topPadding: 40px;
+$bottomPadding: 70px;
+
+canvas{
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:-3;
+}
+
+.upper-canvas{
+	z-index:1;
+  opacity:1;
+}
+
+#drawing{
+	z-index:-2;
+  opacity:1;
+}
+
 body {
+	
 
   // Checks bourbon is running
   //@include transition(all 0.4s);
+
+  cursor: none;
+
+	font-family: 'Open Sans', sans-serif;
+  color:$keyColour1;
+  
+  a{
+  	color:$keyColour1;
+    text-decoration: none;
+  }
+
+  h1{
+		font-size: 55px;
+		font-style: bold;
+		line-height:0px;
+    letter-spacing:-2px;
+
+  }
+
+  h2{
+  	font-size: 25px;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: 400;
+		line-height:15px;
+		a{
+		    border-bottom: solid 2px $keyColour1;
+		}
+  }
+
+  #title{
+    z-index:3;
+  	position: absolute;
+  	top:0px;
+  	left:0px;
+  	padding-left:$leftPadding;
+  	padding-top:$topPadding;
+
+  	.icons{
+  		color: $keyColour1;
+  	}
+
+  }
+
+  #stap{
+    z-index:2;
+  	position: absolute;
+  	bottom:0px;
+  	left:0px;
+  	padding-left:$leftPadding;
+  	padding-bottom:$bottomPadding;
+
+  }
+
+  .icon{
+
+  	width:45px;
+  	padding-right:5px;
+    padding-top:40px
+
+  }
+
+  .noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	}
 
 }
 
