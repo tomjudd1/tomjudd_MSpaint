@@ -11,11 +11,14 @@
 @import "bourbon";
 
 $keyColour1: #000000;
+$bottomBarColor: #c3c3c3;
 
 
 $leftPadding: 50px;
 $topPadding: 40px;
-$bottomPadding: 70px;
+$bottomPadding: 110px;
+
+$bottomBarPadding: 20px $leftPadding 20px $leftPadding;
 
 canvas{
 	position:absolute;
@@ -56,6 +59,7 @@ body {
 		line-height:0px;
     letter-spacing:-2px;
 
+    font-kerning: none;
   }
 
   h2{
@@ -93,12 +97,49 @@ body {
 
   }
 
+  #bottomBar{
+    z-index:3;
+    width:100%;
+    background-color: $bottomBarColor;
+    position: absolute;
+    bottom:0px;
+    left:0px;
+    opacity:0.9;
+
+    #leftside{
+      position:absolute;
+      padding:$bottomBarPadding;
+      a{
+        border-bottom: dashed 1px $keyColour1;
+      }
+    }
+    #rightside{
+      position:inline;
+      float:right;
+      padding:$bottomBarPadding;
+   
+      .twitter-share-button{
+        margin-bottom:-5px;
+        padding-left:10px;
+      }
+
+    }
+
+  }
+
   .icon{
 
   	width:45px;
   	padding-right:5px;
-    padding-top:40px
+    padding-top:40px;
+    padding-bottom:-20px;
 
+
+
+  }
+
+  .linkedIn{
+    padding-left:2px;
   }
 
   .noselect {

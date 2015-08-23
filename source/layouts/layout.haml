@@ -5,6 +5,25 @@
     %meta{content: "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
     %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600", :rel => "stylesheet", :type => "text/css"}/
 
+    / Facebook
+    %meta{:content => "Tom Judd", :property => "og:title"}/
+    %meta{:content => "Animator, creative coder and co-founder of Animade", :property => "og:description"}/
+    %meta{:content => "https://s3.amazonaws.com/animade/projects/tomjudd/tjudd.jpg", :property => "og:image"}/
+    %meta{:content => "http://animade.tv/frankensim", :property => "og:url"}/
+    %meta{:content => "146432109022767", :property => "fb:app_id"}/
+    / Twitter
+    %meta{:content => "summary", :name => "twitter:card"}/
+    %meta{:content => "@tomjudd1", :name => "twitter:site"}/
+    %meta{:content => "@tomjudd1", :name => "twitter:creator"}/
+    %meta{:content => "http://tomjudd.co", :name => "twitter:url"}/
+    %meta{:content => "Tom Judd", :name => "twitter:title"}/
+    %meta{:content => "Animator, creative coder and co-founder of Animade", :name => "twitter:description"}/
+    %meta{:content => "https://s3.amazonaws.com/animade/projects/tomjudd/tjudd.jpg", :name => "twitter:image"}/
+    / Turn off Google Translate
+    %meta{:name => "google", :value => "notranslate"}/
+    / Disable automatic detection and formatting of possible phone numbers in Safari on iOS
+    %meta{:content => "telephone=no", :name => "format-detection"}/
+
     %title
       = current_page.data.title || "Tom Judd"
 
@@ -12,8 +31,20 @@
     = yield_content(:stylesheets)
 	
   %body{class: page_classes, :onload => "init(); animate();"}
+    #fb-root
+    :javascript
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4&appId=183650388358020";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
     %div{:id => "title"}
-      %h1{:class => "noselect"}Tom Judd
+      %h1{:class => "noselect"}
+        Tom Judd
 
     %div{:id => "stap"}
       %h2{:class => "noselect"}
@@ -26,12 +57,23 @@
         %img{:class => "noselect icon", :alt => "tom on twiiter", :src => "library/SVG/03-twitter.svg"}
       %a{:href => "https://instagram.com/tomjudd1"}         
         %img{:class => "noselect icon", :alt => "tom on twiiter", :src => "library/SVG/38-instagram.svg"}
-      %a{:href => "https://twitter.com/tomjudd1"}
-        %img{:class => "noselect icon", :alt => "tom on twiiter", :src => "library/SVG/53-vimeo.svg"}
-      %a{:href => "https://twitter.com/tomjudd1"}  
-        %img{:class => "noselect icon", :alt => "tom on twiiter", :src => "library/SVG/11-linkedin.svg"}            
-      %a{:href => "https://twitter.com/tomjudd1"}
-        %img{:class => "noselect icon", :alt => "tom on twiiter", :src => "library/SVG/02-dribbble.svg"}        
+      %a{:href => "https://uk.linkedin.com/in/tomwj"}  
+        %img{:class => "noselect icon linkedIn", :alt => "tom on linkedIn", :src => "library/SVG/11-linkedin.svg"}            
+      
+    %div{:id => "bottomBar"}
+      %div{:id => "leftside"}
+        Face Paint: Made with 
+        %a{:href => "http://threejs.org/", :target => "blank"}Three.js
+        and 
+        %a{:href => "http://fabricjs.com/", :target => "blank"}Fabric.js
+      %div{:id => "rightside"}
+        .fb-share-button{"data-href" => "http://tomjudd.co", "data-layout" => "button_count"}
+        %a.twitter-share-button{"data-hashtags" => "threejs", "data-related" => "animadetv", "data-text" => "Paint a face", "data-url" => "http://tomjudd.co", "data-via" => "tomjudd1", :href => "https://twitter.com/share"} Tweet
+
+    
     %canvas{:id => "drawing"}
+
+    :javascript
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-57743691-2', 'auto'); ga('send', 'pageview');
 
     = yield
