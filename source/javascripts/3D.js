@@ -11,6 +11,7 @@ var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
 var scaler = 2;
 var circSegs = 32;
+var zplaneDepth = 280;
 document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 document.addEventListener( 'mouseup', onDocumentMouseUp, false );
@@ -211,7 +212,7 @@ function movePen(eX, eY){
 
     var dir = vector.sub( camera.position ).normalize();
 
-    var distance = - ((camera.position.z / dir.z) + 250);
+    var distance = - ((camera.position.z / dir.z) + zplaneDepth);
 
     followPoint = camera.position.clone().add( dir.multiplyScalar( distance ) );
 
@@ -254,23 +255,25 @@ function render() {
     //var ry = Math.sin( mouseX * 4 ) * 0;
     //var rz = Math.sin( mouseX * 4 ) * 0;
 
-    var rx = mouseY/ 2000;
-    var ry = mouseX/ 2000;
-    var rz = mouseX/ 2000;
+    var amp = 35000;
+
+    var rx = mouseY/ amp;
+    var ry = mouseX/ amp;
+    var rz = mouseX/ amp;
 
     //camera.position.x += ( mouseX - camera.position.x ) * .05;
     //camera.position.y += ( - mouseY - camera.position.y ) * .05;
 
     camera.lookAt( head.position );
 
-    //head.rotation.x = rx;
-    //head.rotation.y = ry;
-    //head.rotation.z = rz;
-    head.lookAt(followPoint);
+    head.rotation.x = rx;
+    head.rotation.y = ry;
+    head.rotation.z = rz;
+    //head.lookAt(followPoint);
 
 
-    //lEye.lookAt(lEye.worldToLocal( followPoint ));
-    //rEye.lookAt(followPoint);
+    lEye.lookAt(followPoint);
+    rEye.lookAt(followPoint);
 
     followBall.position.x = followPoint.x;
     followBall.position.y = followPoint.y;

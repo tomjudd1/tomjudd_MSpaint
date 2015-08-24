@@ -6,6 +6,7 @@
 //= require "TweenJS"
 //= require "PreloadJS"
 //= require "threejs"
+//= require "timbre"
 //= require "fabric.min"
 //= require "threejs/examples/js/loaders/OBJLoader"
 //= require "threejs/examples/js/postprocessing/EffectComposer"
