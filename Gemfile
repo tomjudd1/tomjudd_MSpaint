@@ -5,10 +5,28 @@ source 'http://rubygems.org'
 # Also relative paths mean we can't install via bundler
 gem 'bourbon', :git => 'https://github.com/animade/bourbon.git', :branch => 'bourbon-3.2.0'
 
+gem "builder"
+
 gem 'haml'
+
+gem 'bitly'
+
+gem 'foreman'
 
 gem "middleman", "~>3.3.3"
 
-gem "middleman-livereload", "~> 3.3.0"
+gem "middleman-alias"
 
-gem 'middleman-deploy', '~> 1.0.0'
+gem "middleman-deploy"
+
+gem "middleman-blog"
+
+gem "middleman-minify-html"
+
+gem "middleman-livereload", "~> 3.1.0"
+
+gem "middleman-syntax"
+
+gem "middleman-imageoptim", "~> 0.1.4"
+
+gem "middleman-favicon-maker", "~> 3.7"

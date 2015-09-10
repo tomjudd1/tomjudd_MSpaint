@@ -1,16 +1,89 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
-    <title>
-      Page Title
-    </title>
-    <script src="javascripts/home-cfea26f4.js" type="text/javascript"></script>
-    <link href="stylesheets/home-31b38091.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body class='index' onload='init(); animate();'>
-    <!-- Assets -->
-    <!-- Haml -->
-  </body>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600' rel='stylesheet' type='text/css'>
+<link href='favicon.ico' rel='icon' type='image/x-icon'>
+<!-- Facebook -->
+<meta content='Tom Judd' property='og:title'>
+<meta content='Animator, creative coder and co-founder of Animade' property='og:description'>
+<meta content='https://s3.amazonaws.com/animade/projects/tomjudd/tjudd.jpg' property='og:image'>
+<meta content='http://tomjudd.co' property='og:url'>
+<meta content='183650388358020' property='fb:app_id'>
+<!-- Twitter -->
+<meta content='summary' name='twitter:card'>
+<meta content='@tomjudd1' name='twitter:site'>
+<meta content='@tomjudd1' name='twitter:creator'>
+<meta content='http://tomjudd.co' name='twitter:url'>
+<meta content='Tom Judd' name='twitter:title'>
+<meta content='Animator, creative coder and co-founder of Animade' name='twitter:description'>
+<meta content='https://s3.amazonaws.com/animade/projects/tomjudd/tjudd.jpg' name='twitter:image'>
+<!-- Turn off Google Translate -->
+<meta name='google' value='notranslate'>
+<!-- Disable automatic detection and formatting of possible phone numbers in Safari on iOS -->
+<meta content='telephone=no' name='format-detection'>
+<title>
+Tom Judd - Animation etc
+</title>
+<script src="/javascripts/home-2c28349e.js" type="text/javascript"></script>
+
+<link href="/stylesheets/home-038c7e05.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body class='index' onload='init(); animate();'>
+<div id='fb-root'></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4&appId=183650388358020";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+</script>
+<div id='title'>
+<h1 class='noselect'>
+Tom Judd
+</h1>
+</div>
+<div id='stap'>
+<h2 class='noselect'>
+Animator, creative coder and
+</h2>
+<h2 class='noselect'>
+co-founder of
+<a href='http://animade.tv'>Animade.</a>
+</h2>
+<a href='https://twitter.com/tomjudd1'>
+<img alt='tom on twiiter' class='noselect icon' src='library/SVG/03-twitter-a2e1b1fb.svg'>
+</a>
+<a href='https://instagram.com/tomjudd1'>
+<img alt='tom on twiiter' class='noselect icon' src='library/SVG/38-instagram-5b1d976e.svg'>
+</a>
+<a href='https://uk.linkedin.com/in/tomwj'>
+<img alt='tom on linkedIn' class='noselect icon linkedIn' src='library/SVG/11-linkedin-e5522e59.svg'>
+</a>
+</div>
+<div id='bottomBar'>
+<div id='leftside'>
+Face Paint: Made with
+<a href='http://threejs.org/' target='blank'>Three.js</a>
+and
+<a href='http://fabricjs.com/' target='blank'>Fabric.js</a>
+</div>
+<div id='rightside'>
+<div class='fb-share-button' data-href='http://tomjudd.co' data-layout='button_count'></div>
+<a class='twitter-share-button' data-hashtags='character' data-related='animadetv' data-text='Draw on my face!' data-url='http://tomjudd.co' data-via='tomjudd1' href='https://twitter.com/share'>Tweet</a>
+</div>
+</div>
+<canvas id='drawing'></canvas>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-57743691-2', 'auto'); ga('send', 'pageview');
+</script>
+<!-- Assets -->
+<!-- Haml -->
+
+</body>
 </html>
